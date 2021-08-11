@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SignUpComponent } from './pages/home-page/sign-up/sign-up.component';
+import { NameEditorComponent } from './name-editor/name-editor.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SignUpComponent,
+    NameEditorComponent,
+    
   ],
   imports: [
     BrowserModule,
