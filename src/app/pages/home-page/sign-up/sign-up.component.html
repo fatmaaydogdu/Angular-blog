@@ -1,4 +1,4 @@
-<div class="mask d-flex align-items-center h-500 gradient-custom-3">
+<!-- <div class="mask d-flex align-items-center h-500 gradient-custom-3">
     <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-9 col-lg-7 col-xl-6">
@@ -48,6 +48,49 @@
             </div>
         </div>
     </div>
+</div> -->
 
+<form [formGroup]="loginForm" (ngSubmit)="login()">
 
-</div>
+    <div>
+      <label for="username">username</label>
+  
+      <input
+        type="text"
+        name="username"
+        id="username"
+        [formControl]="username">
+  
+      <div [hidden]="username.valid || username.untouched">
+        <div>
+          The following problems have been found with the username:
+        </div>
+  
+        <div [hidden]="!username.hasError('minlength')">
+          Username can not be shorter than 5 characters.
+        </div>
+        <div [hidden]="!username.hasError('required')">
+          Username is required.
+        </div>
+      </div>
+    </div>
+    <div >
+      <label for="password">password</label>
+      <input
+        type="password"
+        name="password"
+        id="password" [formControl]="password">
+  
+      <div [hidden]="password.valid || password.untouched">
+        <div>
+          The following problems have been found with the password:
+        </div>
+  
+        <div [hidden]="!password.hasError('required')">
+          The password is required.
+        </div>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="!loginForm.valid">Log In</button>
+  </form>
