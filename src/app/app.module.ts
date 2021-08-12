@@ -7,7 +7,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NameEditorComponent } from './name-editor/name-editor.component';
-import { SignUpModule } from './pages/home-page/sign-up/sign-up/sign-up.module';
+import { SignUpModule } from './pages/home-page/sign-up/sign-up.module';
 
 
 @NgModule({
