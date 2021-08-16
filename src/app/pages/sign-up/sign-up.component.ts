@@ -15,11 +15,18 @@ export class SignUpComponent implements OnInit {
     Validators.minLength(5),
   ]);
 
-  password = new FormControl('', );
+  password = new FormControl('', [
+    Validators.required,
+  ]);
+  email = new FormControl('' , [
+    Validators.required,
+  ] );
 
   loginForm: FormGroup = this.builder.group({
     username: this.username,
-    password: this.password
+    email: this.email,
+    password: this.password,
+  
   });
 
   constructor(private builder: FormBuilder) { }

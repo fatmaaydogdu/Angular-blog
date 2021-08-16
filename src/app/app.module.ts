@@ -7,7 +7,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NameEditorComponent } from './name-editor/name-editor.component';
-import { SignUpModule } from './pages/home-page/sign-up/sign-up.module';
+import { SignUpModule } from './pages/sign-up/sign-up.module';
+import { LoginModule } from './pages/login/login.module';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { SignUpModule } from './pages/home-page/sign-up/sign-up.module';
     
   ],
   imports: [
+    LoginModule,
     SignUpModule,
     BrowserModule,
     AppRoutingModule

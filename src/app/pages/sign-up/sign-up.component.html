@@ -1,0 +1,114 @@
+<div class="mask d-flex align-items-center h-500 gradient-custom-3">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body p-5">
+            <h2 class="text-uppercase text-center mb-5">Kayıt Ol</h2>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+              <div class="mb-3">
+                <label class="form-label" for="username">Adınız</label>
+                <input type="text" name="username" id="username" [formControl]="username"
+                  class="form-control form-control-lg" />
+
+                <div [hidden]="username.valid || username.untouched">
+     
+                  <div [hidden]="!username.hasError('minlength')">
+                    kullanıcı adı 5 karakterden daha kısa olamaz.
+                  </div>
+                  <div [hidden]="!username.hasError('required')">
+                    Kullanıcı adı gerekli.
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="mb-3">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" [formControl]="email" class="form-control form-control-lg" />
+                <div [hidden]="email.valid || email.untouched">
+
+                  <div [hidden]="!email.hasError('required')">
+                    Email gerekli.
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="mb-3">
+                <label for="password">Şifre</label>
+                <input type="password" name="password" id="password" [formControl]="password"
+                  class="form-control form-control-lg">
+
+                <div [hidden]="password.valid || password.untouched">
+                  <div [hidden]="!password.hasError('required')">
+                    Parola gerekli.
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
+                [disabled]="!loginForm.valid">Kayıt Ol</button>
+              </div>
+
+              <p class="text-center text-muted mt-5 mb-0">Zaten bir hesabınız var mı? <a href="giris"
+                  class="fw-bold text-body"><u>Burada oturum açın</u></a></p>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+    <div>
+      <label for="username">username</label>
+  
+      <input
+        type="text"
+        name="username"
+        id="username"
+        [formControl]="username">
+  
+      <div [hidden]="username.valid || username.untouched">
+        <div>
+          The following problems have been found with the username:
+        </div>
+  
+        <div [hidden]="!username.hasError('minlength')">
+          Username can not be shorter than 5 characters.
+        </div>
+        <div [hidden]="!username.hasError('required')">
+          Username is required.
+        </div>
+      </div>
+    </div>
+    <div >
+      <label for="password">password</label>
+      <input
+        type="password"
+        name="password"
+        id="password" [formControl]="password">
+  
+      <div [hidden]="password.valid || password.untouched">
+        <div>
+          The following problems have been found with the password:
+        </div>
+  
+        <div [hidden]="!password.hasError('required')">
+          The password is required.
+        </div>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="!loginForm.valid">Log In</button>
+  </form> -->
