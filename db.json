@@ -7,6 +7,16 @@
     {
       "name": "fatma",
       "id": 3
+    },
+    {
+      "name": "fatma",
+      "id": 4
+    },
+    {
+      "username": "testuser",
+      "email": "test@msn.com",
+      "password": "asdsadsadsadsa",
+      "id": 5
     }
   ],
   "posts": [

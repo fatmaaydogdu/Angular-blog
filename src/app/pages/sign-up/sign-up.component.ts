@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { SignupService } from 'src/app/services/signup/signup.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,7 +8,11 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
+  constructor(private builder: FormBuilder, private signupService: SignupService) { }
+
+
   ngOnInit(): void {
+    
   }
 
   username = new FormControl('', [
@@ -29,11 +34,15 @@ export class SignUpComponent implements OnInit {
   
   });
 
-  constructor(private builder: FormBuilder) { }
+  testService() {
+    this.signupService.postTest(this.loginForm.value).subscribe((res: any)=> {
+      console.log(res);
+    })   
+  }
+
 
   login () {
-    console.log(this.loginForm.value);
-    // Attempt Logging in...
+    this.testService();
   }
 
 }
