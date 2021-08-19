@@ -27,7 +27,7 @@ export class SignUpComponent implements OnInit {
     Validators.required,
   ] );
 
-  loginForm: FormGroup = this.builder.group({
+  signupForm: FormGroup = this.builder.group({
     username: this.username,
     email: this.email,
     password: this.password,
@@ -35,12 +35,13 @@ export class SignUpComponent implements OnInit {
   });
 
   testService() {
-    this.signupService.postTest(this.loginForm.value).subscribe((res: any)=> {
+    this.signupService.postTest(this.signupForm.value).subscribe((res: any)=> {
       console.log(res);
     })   
   }
 
-  login () {
+
+  signup () {
     this.testService();
   }
 
