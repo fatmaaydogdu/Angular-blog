@@ -40,7 +40,6 @@ export class SignUpComponent implements OnInit {
     })   
   }
 
-
   login () {
     this.testService();
   }
