@@ -1,1 +1,12 @@
 @import "./assets/scss/custom.scss";
+@import "./assets/scss/toastr.scss";
+
+@import '~ngx-toastr/toastr';
+
+
+
+// if you'd like to use it without importing all of bootstrap it requires
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+

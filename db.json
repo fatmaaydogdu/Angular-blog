@@ -17,6 +17,72 @@
       "email": "test@msn.com",
       "password": "asdsadsadsadsa",
       "id": 5
+    },
+    {
+      "username": "fatma",
+      "email": "fatmaaydogdu581@gmail.com",
+      "password": "123123",
+      "id": 6
+    },
+    {
+      "username": "fatma",
+      "email": "fatmaaydogdu581@gmail.com",
+      "password": "1212",
+      "id": 7
+    },
+    {
+      "username": "deneme",
+      "email": "test@msn.com",
+      "password": "123123",
+      "id": 8
+    },
+    {
+      "username": "fatma",
+      "email": "test@msn.com",
+      "password": "123",
+      "id": 9
+    },
+    {
+      "username": "deneme",
+      "email": "test@msn.com",
+      "password": "123123",
+      "id": 10
+    },
+    {
+      "username": "deneme",
+      "email": "test@msn.com",
+      "password": "123123",
+      "id": 11
+    },
+    {
+      "username": "fatma",
+      "email": "test@msn.com",
+      "password": "123123",
+      "id": 12
+    },
+    {
+      "username": "fatma",
+      "email": "fatmaaydogdu581@gmail.com",
+      "password": "123123",
+      "id": 13
+    },
+    {
+      "username": "fatma",
+      "email": "fatmaaydogdu581@gmail.com",
+      "password": "123123",
+      "id": 14
+    },
+    {
+      "username": "fatma",
+      "email": "test@msn.com",
+      "password": "123123",
+      "id": 15
+    },
+    {
+      "username": "fatma",
+      "email": "fatmaaydogdu581@gmail.com",
+      "password": "123123",
+      "id": 16
     }
   ],
   "posts": [
