@@ -8,6 +8,7 @@ const routes: Routes = [
     {path: '', component: HomePageComponent},
     {path: 'kayit', component: SignUpComponent},
     {path: 'giris', component: LoginComponent},
+    
 
 ]; // sets up routes constant where you define your routes
 

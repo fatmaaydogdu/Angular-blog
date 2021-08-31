@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/services/login/login.service';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor (private builder: FormBuilder, private loginService: LoginService){}
+  constructor (private builder: FormBuilder, private loginService: LoginService, private toastr: ToastrService){}
 
   ngOnInit(): void {
   }
@@ -26,18 +28,26 @@ export class LoginComponent implements OnInit {
   });
 
   testService() {
-    this.loginService.postTest(this.loginForm.value).subscribe((res: any)=> {
+    this.loginService.login(this.loginForm.value).subscribe((res: any) => {
       console.log(res);
-    })   
+      if(res.id){
+        this.toastr.success('Giriş başarılı!');
+
+      }
+      else{
+        this.toastr.error('Giriş başarısız!');
+      }
+    } , error => {
+      this.toastr.error('Giriş başarısız!');
+    },)
   }
 
-  
-
-  login () {
-    console.log(this.loginForm.value);
+  login(){
+    if(this.loginForm.valid){
     this.testService();
-    // Attempt Logging in...
   }
+  }
+
 
 }
 

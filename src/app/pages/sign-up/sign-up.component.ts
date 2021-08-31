@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { SignupService } from 'src/app/services/signup/signup.service';
 import { ToastrService } from 'ngx-toastr';
+import {Router} from "@angular/router";
+
 
 
 @Component({
@@ -10,10 +12,8 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-  constructor(private builder: FormBuilder, private signupService: SignupService, private toastr: ToastrService) { }
-  showToatr() {
-    this.toastr.success('Kayıt başarılı!');
-  }
+  constructor(private builder: FormBuilder, private signupService: SignupService, private toastr: ToastrService, private router:Router
+    ) { }
 
   ngOnInit(): void { }
 
@@ -39,14 +39,27 @@ export class SignUpComponent implements OnInit {
   });
 
   testService() {
-    this.signupService.postTest(this.signupForm.value).subscribe((res: any) => {
+    this.signupService.signup(this.signupForm.value).subscribe((res: any) => {
       console.log(res);
-    })
+      if(res.id){
+        this.toastr.success('Kayıt başarılı!');
+        this.router.navigate(['/giris']);
+
+      }
+      else{
+        this.toastr.error('Kayıt başarısız!');
+      }
+    } , error => {
+      this.toastr.error('Kayıt başarısız!');
+    },)
   }
 
 
   signup() {
-    this.testService();
+    if(this.signupForm.valid){
+      this.testService();
+    }
+    
   }
 
 }
