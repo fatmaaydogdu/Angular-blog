@@ -15,8 +15,8 @@ export class LoginService {
   }
 
   login(data: any) {
-    console.log(data)
-    return this.httpClient.post('http://localhost:3000/users?email=test@msn.com&password=asdsadsadsadsa', data);
+    console.log(data) 
+    return this.httpClient.post('http://localhost:3000/users?email='+ data.email + '&' + data.password + 'password=asdsadsadsadsa',  data);
     
   }
 
