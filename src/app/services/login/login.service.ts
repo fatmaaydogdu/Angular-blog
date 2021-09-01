@@ -11,14 +11,12 @@ export class LoginService {
   }
 
   getTest() {
-    return this.httpClient.get('https://jsonplaceholder.typicode.com/todos/1', );
+    return this.httpClient.get('https://jsonplaceholder.typicode.com/todos/1',);
   }
 
   login(data: any) {
-    console.log(data) 
-    return this.httpClient.post('http://localhost:3000/users?email='+ data.email + '&' + data.password + 'password=asdsadsadsadsa',  data);
-    
+    return this.httpClient.post('http://localhost:3000/users?email=' + data.email + '&' + data.password + 'password=asdsadsadsadsa', data);
   }
 
-  
+
 }

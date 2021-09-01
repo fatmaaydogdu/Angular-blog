@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/services/login/login.service';
 import { ToastrService } from 'ngx-toastr';
+import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor (private builder: FormBuilder, private loginService: LoginService, private toastr: ToastrService){}
+  constructor (private builder: FormBuilder, private loginServiceApi: LoginService, private toastr: ToastrService, private router:Router){}
 
   ngOnInit(): void {
   }
@@ -27,11 +29,12 @@ export class LoginComponent implements OnInit {
   
   });
 
-  testService() {
-    this.loginService.login(this.loginForm.value).subscribe((res: any) => {
-      console.log(res);
+  loginService() {
+    this.loginServiceApi.login(this.loginForm.value).subscribe((res: any) => {
       if(res.id){
+        localStorage.setItem('userInfo',JSON.stringify(res));
         this.toastr.success('Giriş başarılı!');
+        this.router.navigate(['/homepage']);
 
       }
       else{
@@ -44,7 +47,7 @@ export class LoginComponent implements OnInit {
 
   login(){
     if(this.loginForm.valid){
-    this.testService();
+    this.loginService();
   }
   }
 

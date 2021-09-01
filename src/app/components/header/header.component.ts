@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  userInfo:any = JSON.stringify(JSON.parse(localStorage.getItem('userInfo')))
   constructor() { }
 
   ngOnInit(): void {
+    console.log(JSON.parse(localStorage.getItem('userInfo')))
   }
 
 }

@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-  constructor(private builder: FormBuilder, private signupService: SignupService, private toastr: ToastrService, private router:Router
+  constructor(private builder: FormBuilder, private signupServiceApi: SignupService, private toastr: ToastrService, private router:Router
     ) { }
 
   ngOnInit(): void { }
@@ -38,8 +38,8 @@ export class SignUpComponent implements OnInit {
 
   });
 
-  testService() {
-    this.signupService.signup(this.signupForm.value).subscribe((res: any) => {
+  signupService() {
+    this.signupServiceApi.signup(this.signupForm.value).subscribe((res: any) => {
       console.log(res);
       if(res.id){
         this.toastr.success('Kayıt başarılı!');
@@ -57,7 +57,7 @@ export class SignUpComponent implements OnInit {
 
   signup() {
     if(this.signupForm.valid){
-      this.testService();
+      this.signupService();
     }
     
   }

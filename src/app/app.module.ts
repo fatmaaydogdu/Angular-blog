@@ -14,12 +14,14 @@ import { LoginModule } from './pages/login/login.module';
 import { HttpClientModule } from '@angular/common/http';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     HeaderComponent,
     FooterComponent,
+   
     
     
   ],
