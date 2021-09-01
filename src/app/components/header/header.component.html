@@ -21,11 +21,11 @@
         </a>
 
       
-        <div *ngIf="!userInfo"> 
+        <div *ngIf="!userInfo.id"> 
           <a class="btn btn-sm btn-outline-secondary" href="giris">Giriş</a>
         <a class="btn btn-sm btn-outline-secondary" href="kayit">Kayıt</a>
         </div>
-        <div>
+        <div *ngIf="userInfo.id">
           <span>{{userInfo.email}}</span> &nbsp;&nbsp;
           <a class="btn btn-sm btn-outline-secondary" href="#">Çıkış Yap</a>
         </div>
