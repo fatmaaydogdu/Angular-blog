@@ -6,12 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  userInfo = JSON.parse(localStorage.getItem('userInfo') || '{}');
 
-  userInfo:any = JSON.stringify(JSON.parse(localStorage.getItem('userInfo')))
   constructor() { }
 
   ngOnInit(): void {
-    console.log(JSON.parse(localStorage.getItem('userInfo')))
+    console.log(this.userInfo);
   }
 
 }

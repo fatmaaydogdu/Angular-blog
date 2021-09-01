@@ -32,9 +32,9 @@ export class LoginComponent implements OnInit {
   loginService() {
     this.loginServiceApi.login(this.loginForm.value).subscribe((res: any) => {
       if(res.id){
-        localStorage.setItem('userInfo',JSON.stringify(res));
+        localStorage.setItem('userInfo',JSON.stringify([res]));
         this.toastr.success('Giriş başarılı!');
-        this.router.navigate(['/homepage']);
+        this.router.navigate(['/']);
 
       }
       else{
