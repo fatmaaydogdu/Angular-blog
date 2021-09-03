@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
     } , error => {
       this.toastr.error('Giriş başarısız!');
     },)
+
   }
 
   login(){

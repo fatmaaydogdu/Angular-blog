@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,6 +10,14 @@ export class HeaderComponent implements OnInit {
   userInfo = JSON.parse(localStorage.getItem('userInfo') || '{}');
 
   constructor() { }
+
+  exit() {
+    if (this.userInfo) {
+      localStorage.removeItem('userInfo');
+      location.reload();
+    }
+
+  }
 
   ngOnInit(): void {
     console.log(this.userInfo);

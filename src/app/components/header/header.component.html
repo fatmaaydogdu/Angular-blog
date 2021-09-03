@@ -27,7 +27,7 @@
         </div>
         <div *ngIf="userInfo.id">
           <span>{{userInfo.email}}</span> &nbsp;&nbsp;
-          <a class="btn btn-sm btn-outline-secondary" href="#">Çıkış Yap</a>
+          <a class="btn btn-sm btn-outline-secondary" (click)="exit()" href="">Çıkış Yap </a>
         </div>
         
         
