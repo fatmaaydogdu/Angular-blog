@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
-  exit() {
+  logout() {
     if (this.userInfo) {
       localStorage.removeItem('userInfo');
       location.reload();

@@ -296,6 +296,48 @@
       "email": "fatmaaydogdu581@gmail.com",
       "password": "123123",
       "id": 57
+    },
+    {
+      "email": "fatmaaydogdu581@gmail.com",
+      "password": "123123",
+      "id": 58
+    },
+    {
+      "email": "test@msn.com",
+      "password": "123123",
+      "id": 59
+    },
+    {
+      "email": "test@msn.com",
+      "password": "123123",
+      "id": 60
+    },
+    {
+      "email": "test@msn.com",
+      "password": "123123",
+      "id": 61
+    },
+    {
+      "header": "Deneme",
+      "content": "Selam",
+      "id": 62
+    },
+    {
+      "header": "Deneme",
+      "content": "Selam",
+      "id": 63
+    },
+    {
+      "header": "Deneme",
+      "content": "Selam",
+      "id": 64
+    }
+  ],
+  "articles": [
+    {
+      "header": "Deneme",
+      "content": "Selam",
+      "id": 1
     }
   ],
   "posts": [

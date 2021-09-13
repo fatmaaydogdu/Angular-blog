@@ -11,7 +11,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SignUpModule } from './pages/sign-up/sign-up.module';
 import { LoginModule } from './pages/login/login.module';
+import { ArticleModule } from './pages/article-add/article-add.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ArticleAddComponent } from './pages/article-add/article-add.component';
+
 
 
 
@@ -21,13 +24,13 @@ import { HttpClientModule } from '@angular/common/http';
     HomePageComponent,
     HeaderComponent,
     FooterComponent,
-   
     
     
   ],
   imports: [
     LoginModule,
     SignUpModule,
+    ArticleModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
